@@ -9,16 +9,28 @@
 /* Begin PBXBuildFile section */
 		5A523936278C4B3900B39810 /* SecureAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A523935278C4B3900B39810 /* SecureAppApp.swift */; };
 		5A523938278C4B3900B39810 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A523937278C4B3900B39810 /* ContentView.swift */; };
-		5A52393A278C4B3B00B39810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A523939278C4B3B00B39810 /* Assets.xcassets */; };
 		5A52393D278C4B3B00B39810 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A52393C278C4B3B00B39810 /* Preview Assets.xcassets */; };
+		5A523945278C4B6800B39810 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A523944278C4B6800B39810 /* User.swift */; };
+		5A523948278C4BCC00B39810 /* TestAPIservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A523947278C4BCC00B39810 /* TestAPIservice.swift */; };
+		5A52394A278C4D1100B39810 /* Authetication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A523949278C4D1100B39810 /* Authetication.swift */; };
+		5A52394C278C4E5200B39810 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52394B278C4E5200B39810 /* UIApplication+Extension.swift */; };
+		5A523950278C4F2D00B39810 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52394F278C4F2D00B39810 /* LoginViewModel.swift */; };
+		5A523952278C4F3D00B39810 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A523951278C4F3D00B39810 /* LoginView.swift */; };
+		5A523954278C550400B39810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A523953278C550400B39810 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5A523932278C4B3900B39810 /* SecureApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecureApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A523935278C4B3900B39810 /* SecureAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAppApp.swift; sourceTree = "<group>"; };
 		5A523937278C4B3900B39810 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5A523939278C4B3B00B39810 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A52393C278C4B3B00B39810 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5A523944278C4B6800B39810 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5A523947278C4BCC00B39810 /* TestAPIservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPIservice.swift; sourceTree = "<group>"; };
+		5A523949278C4D1100B39810 /* Authetication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authetication.swift; sourceTree = "<group>"; };
+		5A52394B278C4E5200B39810 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		5A52394F278C4F2D00B39810 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5A523951278C4F3D00B39810 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5A523953278C550400B39810 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +63,13 @@
 		5A523934278C4B3900B39810 /* SecureApp */ = {
 			isa = PBXGroup;
 			children = (
+				5A52394E278C4EE100B39810 /* ViewsModel */,
+				5A52394D278C4ED200B39810 /* Views */,
+				5A523949278C4D1100B39810 /* Authetication.swift */,
+				5A523946278C4BB200B39810 /* Services */,
+				5A523943278C4B5A00B39810 /* Models */,
 				5A523935278C4B3900B39810 /* SecureAppApp.swift */,
-				5A523937278C4B3900B39810 /* ContentView.swift */,
-				5A523939278C4B3B00B39810 /* Assets.xcassets */,
+				5A523953278C550400B39810 /* Assets.xcassets */,
 				5A52393B278C4B3B00B39810 /* Preview Content */,
 			);
 			path = SecureApp;
@@ -65,6 +81,40 @@
 				5A52393C278C4B3B00B39810 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5A523943278C4B5A00B39810 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A523944278C4B6800B39810 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A523946278C4BB200B39810 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5A523947278C4BCC00B39810 /* TestAPIservice.swift */,
+				5A52394B278C4E5200B39810 /* UIApplication+Extension.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5A52394D278C4ED200B39810 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A523951278C4F3D00B39810 /* LoginView.swift */,
+				5A523937278C4B3900B39810 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A52394E278C4EE100B39810 /* ViewsModel */ = {
+			isa = PBXGroup;
+			children = (
+				5A52394F278C4F2D00B39810 /* LoginViewModel.swift */,
+			);
+			path = ViewsModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +175,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A523954278C550400B39810 /* Assets.xcassets in Resources */,
 				5A52393D278C4B3B00B39810 /* Preview Assets.xcassets in Resources */,
-				5A52393A278C4B3B00B39810 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +189,12 @@
 			files = (
 				5A523938278C4B3900B39810 /* ContentView.swift in Sources */,
 				5A523936278C4B3900B39810 /* SecureAppApp.swift in Sources */,
+				5A52394A278C4D1100B39810 /* Authetication.swift in Sources */,
+				5A523948278C4BCC00B39810 /* TestAPIservice.swift in Sources */,
+				5A52394C278C4E5200B39810 /* UIApplication+Extension.swift in Sources */,
+				5A523945278C4B6800B39810 /* User.swift in Sources */,
+				5A523952278C4F3D00B39810 /* LoginView.swift in Sources */,
+				5A523950278C4F2D00B39810 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +338,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.com.SecureApp;
+				PRODUCT_BUNDLE_IDENTIFIER = test.com.GraphQLProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -311,7 +367,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.com.SecureApp;
+				PRODUCT_BUNDLE_IDENTIFIER = test.com.GraphQLProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
