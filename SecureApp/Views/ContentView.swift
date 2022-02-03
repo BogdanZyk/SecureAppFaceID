@@ -22,6 +22,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Log out"){
                         authentication.updateValidation(success: false)
+                        
                     }
                 }
             }

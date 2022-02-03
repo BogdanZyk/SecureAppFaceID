@@ -11,43 +11,69 @@ struct LoginView: View {
 @StateObject private var loginVM = LoginViewModel()
 @EnvironmentObject var authentication: Authentication
     var body: some View {
-        VStack{
+        VStack {
             Text("My Secure App")
                 .font(.largeTitle)
             TextField("Email Address", text: $loginVM.user.email)
                 .keyboardType(.emailAddress)
             SecureField("Password", text: $loginVM.user.password)
-            if loginVM.showProgressView{
+            if loginVM.showProgressView {
                 ProgressView()
             }
-            Button("Log in"){
+            Button("Log in") {
                 loginVM.login { success in
                     authentication.updateValidation(success: success)
                 }
             }
             .disabled(loginVM.loginDisabled)
-            .padding()
+            .padding(.bottom,20)
+            if authentication.biometricType() != .none {
+                Button {
+                    authentication.requestBiometricUnlock { (result:Result<User, Authentication.AuthenticationError>) in
+                        switch result {
+                        case .success(let user):
+                            loginVM.user = user
+                            loginVM.login { success in
+                                authentication.updateValidation(success: success)
+                            }
+                        case .failure(let error):
+                            loginVM.error = error
+                        }
+                    }
+                } label: {
+                    Image(systemName: authentication.biometricType() == .face ? "faceid" : "touchid")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                }
+            }
             Image("LaunchScreen")
 //                .onTapGesture {
 //                    UIApplication.shared.endEditing()
 //                }
             Spacer()
         }
-        .textInputAutocapitalization(.none)
+        .autocapitalization(.none)
         .textFieldStyle(RoundedBorderTextFieldStyle())
         .padding()
-        .disabled(loginVM.showProgressView)
-        .alert("Invalid Login", isPresented: $loginVM.showAlert) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text(loginVM.error?.localizedDescription ?? "")
+        //.disabled(loginVM.showProgressView)
+        .alert(item: $loginVM.error) { error in
+            if error == .userNotSaved {
+                return Alert(title: Text("User Not Saved"),
+                             message: Text(error.localizedDescription),
+                             primaryButton: .default(Text("OK"), action: {
+                    loginVM.storeUserNext = true
+                             }),
+                             secondaryButton: .cancel())
+            } else {
+                return Alert(title: Text("Invalid Login"), message: Text(error.localizedDescription))
+            }
         }
-        
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(Authentication())
     }
 }

@@ -9,17 +9,15 @@ import SwiftUI
 
 @main
 struct SecureAppApp: App {
-@StateObject var authentication = Authentication()
+    @StateObject var authentication = Authentication()
     var body: some Scene {
         WindowGroup {
-            Group{
-                if authentication.isValidated{
-                    ContentView()
-                        .environmentObject(authentication)
-                }else{
-                    LoginView()
-                        .environmentObject(authentication)
-                }
+            if authentication.isValidated {
+                ContentView()
+                    .environmentObject(authentication)
+            } else {
+                LoginView()
+                    .environmentObject(authentication)
             }
         }
     }
